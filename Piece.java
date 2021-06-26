@@ -6,7 +6,8 @@ public abstract class Piece
 
     public Piece(boolean white)
     {
-
+        if(white == true)
+        setWhite(this.white);
     }
 
     public boolean checkWhite(boolean white)
@@ -28,6 +29,5 @@ public abstract class Piece
     {
         this.taken = true;
     }
-
 
 }
