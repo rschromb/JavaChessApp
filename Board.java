@@ -1,3 +1,5 @@
+package JavaChessApp;
+
 public class Board
 {
     Square[][] chessBoard;
@@ -43,6 +45,13 @@ public class Board
                     chessBoard[i - 1][j-1] = new Square(i, j, new King(true));
                     else
                     chessBoard[i - 1][j-1] = new Square(i, j, new King(false));
+                }
+                else if(i == 2 || i == 7)
+                {
+                    if(i == 2)
+                    chessBoard[i - 1][j-1] = new Square(i, j, new Pawn(true));
+                    if(i == 7)
+                    chessBoard[i - 1][j-1] = new Square(i, j, new Pawn(false));
                 }
                 else
                 chessBoard[i - 1][j-1] = new Square(i, j, null);
