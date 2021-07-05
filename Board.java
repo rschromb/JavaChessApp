@@ -1,5 +1,3 @@
-package JavaChessApp;
-
 public class Board
 {
     Square[][] chessBoard;
