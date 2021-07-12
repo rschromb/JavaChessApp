@@ -8,7 +8,7 @@ public class Board extends JFrame
     //Constructor sets pieces to proper squares, and to proper colors.
     public Board()
     {
-        setTitle("Grid GUI");
+        setTitle("Java Chess App");
         Container c = getContentPane();
         c.setLayout(new GridLayout(8, 8));
         setSize(800, 800);
