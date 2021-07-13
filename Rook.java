@@ -8,6 +8,6 @@ public class Rook extends Piece
     @Override
     public String showPiece()
     {
-        return "B";
+        return "R";
     }
 }
