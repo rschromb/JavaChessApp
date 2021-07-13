@@ -4,4 +4,10 @@ public class Queen extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "Q";
+    }
 }
