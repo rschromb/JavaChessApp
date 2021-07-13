@@ -1,4 +1,8 @@
-public class Square 
+package JavaChessApp;
+
+import javax.swing.JButton;
+
+public class Square extends JButton
 {
     private int x;
     private int y;
@@ -9,6 +13,12 @@ public class Square
         this.setX(x);
         this.setY(y);
         this.setPiece(piece);
+        
+        //Temporary String display until icons can be used on the Squares(JButtons).
+        if(piece != null)
+        {
+            this.setText(this.piece.showColor(this.piece.checkWhite()) + this.piece.showPiece());
+        }
     }
 
     public void setX(int x)
