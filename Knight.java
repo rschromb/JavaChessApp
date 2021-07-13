@@ -4,4 +4,10 @@ public class Knight extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "H";
+    }
 }
