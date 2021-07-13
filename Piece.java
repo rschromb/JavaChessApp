@@ -1,16 +1,30 @@
+package JavaChessApp;
+
 public abstract class Piece 
 {
     private boolean taken = false;
     private boolean white = false;
-    //location - for later
 
+    //Abstract method, currently returning a String, for instantiated Pieces to display their location on the Board.
+    abstract String showPiece();
+
+    //Constructor includes boolean so pieces can be declared to the correct color upon initialization.
     public Piece(boolean white)
     {
         if(white == true)
         setWhite(this.white);
     }
 
-    public boolean checkWhite(boolean white)
+    //Returns String to show color of Piece.
+    public String showColor(boolean white)
+    {
+        if(white == true)
+        return "W";
+        else
+        return "B";
+    }
+
+    public boolean checkWhite()
     {
         return this.white;
     }
