@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Board extends JFrame
 {
-    //Constructor sets pieces to proper squares, and to proper colors.
+    //Constructor instantiates Squares to the GUI, sets the pieces to proper squares, and to proper colors.
     public Board()
     {
         setTitle("Java Chess App");
@@ -65,6 +65,7 @@ public class Board extends JFrame
                 else
                 chessBoard = new Square(i, j, null);
 
+                //Sets the Squares to proper color.
                 if((i  % 2 != 0 && j % 2 == 0)||(i % 2 == 0 && j % 2 != 0))
                 chessBoard.setBackground(Color.BLACK);
                 else
