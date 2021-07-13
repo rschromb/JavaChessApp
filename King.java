@@ -4,4 +4,10 @@ public class King extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "K";
+    }
 }
