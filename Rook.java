@@ -4,4 +4,10 @@ public class Rook extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "B";
+    }
 }
