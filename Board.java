@@ -1,7 +1,7 @@
-package JavaChessApp;
-
 import javax.swing.JFrame;
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionListener;
 
 public class Board extends JFrame
 {
@@ -11,7 +11,7 @@ public class Board extends JFrame
         setTitle("Java Chess App");
         Container c = getContentPane();
         c.setLayout(new GridLayout(8, 8));
-        setSize(800, 800);
+        setSize(new Dimension(814, 814));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -46,7 +46,7 @@ public class Board extends JFrame
                     if(i == 1)
                     chessBoard = new Square(i, j, new Queen(true));
                     else
-                    chessBoard = new Square(i, j, new Queen(false));
+                    chessBoard= new Square(i, j, new Queen(false));
                 }
                 else if((i ==  1 || i == 8) && j == 5)
                 {
@@ -71,7 +71,18 @@ public class Board extends JFrame
                 else
                 chessBoard.setBackground(Color.WHITE);
 
+                ActionListener listener = new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        System.exit(0);
+                    }
+                };
+
+                chessBoard.addActionListener(listener);
                 c.add(chessBoard);
             }
     }
+
+    
 }
