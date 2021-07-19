@@ -1,8 +1,8 @@
-package JavaChessApp;
-
+import java.awt.*;
 import javax.swing.JButton;
+import java.awt.event.*;
 
-public class Square extends JButton
+public class Square extends JButton implements ActionListener
 {
     private int x;
     private int y;
@@ -13,12 +13,40 @@ public class Square extends JButton
         this.setX(x);
         this.setY(y);
         this.setPiece(piece);
-        
+        //this.setSize(new Dimension(100, 100));
+
         //Temporary String display until icons can be used on the Squares(JButtons).
         if(piece != null)
         {
             this.setText(this.piece.showColor(this.piece.checkWhite()) + this.piece.showPiece());
         }
+
+        ActionListener listener = new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                
+            }
+        };
+
+        this.addActionListener(listener);
+
+        if((x  % 2 != 0 && y % 2 == 0)||(x % 2 == 0 && y % 2 != 0))
+        {
+            this.setBackground(Color.BLACK);
+        }
+        else
+        {  
+             this.setBackground(Color.WHITE);
+        }
+        
+        setOpaque(true);
+    ;
+    }
+
+    public void movePiece()
+    {
+
     }
 
     public void setX(int x)
@@ -31,14 +59,14 @@ public class Square extends JButton
         this.y = y;
     }
 
-    public int getX(int x)
+    public int getX()
     {
-        return this.x;
+        return x;
     }
 
-    public int getY(int y)
+    public int getY()
     {
-        return this.y;
+        return y;
     }
 
     public void setPiece(Piece x)
@@ -49,5 +77,10 @@ public class Square extends JButton
     public Piece getPiece()
     {
         return this.piece;
+    }
+
+    public void actionPerformed(ActionEvent e)
+    {
+        
     }
 }
