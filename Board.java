@@ -1,7 +1,5 @@
 import javax.swing.JFrame;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.event.ActionListener;
 
 public class Board extends JFrame
 {
@@ -11,9 +9,6 @@ public class Board extends JFrame
         setTitle("Java Chess App");
         Container c = getContentPane();
         c.setLayout(new GridLayout(8, 8));
-        setSize(new Dimension(814, 814));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
 
         for(int i = 1; i < 9; i++)
             for(int j = 1; j < 9; j++)
@@ -65,24 +60,10 @@ public class Board extends JFrame
                 else
                 chessBoard = new Square(i, j, null);
 
-                //Sets the Squares to proper color.
-                if((i  % 2 != 0 && j % 2 == 0)||(i % 2 == 0 && j % 2 != 0))
-                chessBoard.setBackground(Color.BLACK);
-                else
-                chessBoard.setBackground(Color.WHITE);
-
-                ActionListener listener = new ActionListener()
-                {
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        System.exit(0);
-                    }
-                };
-
-                chessBoard.addActionListener(listener);
                 c.add(chessBoard);
             }
+        setSize(new Dimension(800, 800));
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-    
 }
