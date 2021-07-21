@@ -4,9 +4,8 @@ import java.awt.event.*;
 
 public class Square extends JButton implements ActionListener
 {
-    private int x;
-    private int y;
     private Piece piece;
+    private int x, y;
 
     public Square(int x, int y, Piece piece)
     {
@@ -25,7 +24,8 @@ public class Square extends JButton implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
-                
+                System.out.println("X = " + showX());
+                System.out.println("Y = " + showY());
             }
         };
 
@@ -44,9 +44,29 @@ public class Square extends JButton implements ActionListener
     ;
     }
 
-    public void movePiece()
+    private void getMove()
     {
+        piece.movePiece(this);
+    }
 
+    public int showX()
+    {
+        return this.x;
+    }
+
+    public int showY()
+    {
+        return this.y;
+    }
+
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    public void setY(int y)
+    {
+        this.y = y;
     }
 
     public void setPiece(Piece x)
@@ -61,6 +81,6 @@ public class Square extends JButton implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        
+                
     }
 }
