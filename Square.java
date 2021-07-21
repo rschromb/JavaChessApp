@@ -24,8 +24,13 @@ public class Square extends JButton implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
+<<<<<<< HEAD
                 if(piece != null)
                 getMove();
+=======
+                System.out.println("X = " + showX());
+                System.out.println("Y = " + showY());
+>>>>>>> 5f491c45c4af63738f3734e0bb078657d1eb8bfd
             }
         };
 
