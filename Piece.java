@@ -1,5 +1,3 @@
-package JavaChessApp;
-
 public abstract class Piece 
 {
     private boolean taken = false;

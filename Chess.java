@@ -1,5 +1,3 @@
-package JavaChessApp;
-
 public class Chess 
 {
     public static void main(String[] args) throws Exception 
