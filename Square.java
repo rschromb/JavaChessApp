@@ -5,13 +5,14 @@ import java.awt.event.*;
 public class Square extends JButton implements ActionListener
 {
     private Piece piece;
+    private int x, y;
 
     public Square(int x, int y, Piece piece)
     {
-        //this.setX(x);
-        //this.setY(y);
+        this.setX(x);
+        this.setY(y);
         this.setPiece(piece);
-        //this.setSize(new Dimension(100, 100));
+        this.setSize(new Dimension(100, 100));
 
         //Temporary String display until icons can be used on the Squares(JButtons).
         if(piece != null)
@@ -23,7 +24,8 @@ public class Square extends JButton implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
-                
+                if(piece != null)
+                getMove();
             }
         };
 
@@ -42,9 +44,29 @@ public class Square extends JButton implements ActionListener
     ;
     }
 
-    public void movePiece()
+    private void getMove()
     {
+        piece.movePiece(this);
+    }
 
+    public int showX()
+    {
+        return this.x;
+    }
+
+    public int showY()
+    {
+        return this.y;
+    }
+
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    public void setY(int y)
+    {
+        this.y = y;
     }
 
     public void setPiece(Piece x)
@@ -59,6 +81,6 @@ public class Square extends JButton implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        
+                
     }
 }

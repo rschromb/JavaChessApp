@@ -10,4 +10,10 @@ public class Knight extends Piece
     {
         return "H";
     }
+
+    public void movePiece(Square a)
+    {
+        System.out.println(a.showX());
+        System.out.println(a.showY());
+    }
 }

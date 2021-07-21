@@ -10,4 +10,10 @@ public class Rook extends Piece
     {
         return "R";
     }
+
+    public void movePiece(Square a)
+    {
+        System.out.println(a.showX());
+        System.out.println(a.showY());
+    }
 }

@@ -10,4 +10,10 @@ public class Bishop extends Piece
     {
         return "B";
     }
+
+    public void movePiece(Square a)
+    {
+        System.out.println(a.showX());
+        System.out.println(a.showY());
+    }
 }

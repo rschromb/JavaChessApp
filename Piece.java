@@ -3,8 +3,9 @@ public abstract class Piece
     private boolean taken = false;
     private boolean white = false;
 
-    //Abstract method, currently returning a String, for instantiated Pieces to display their location on the Board.
+    //Abstract methods for pieces to override
     abstract String showPiece();
+    abstract void movePiece(Square a);
 
     //Constructor includes boolean so pieces can be declared to the correct color upon initialization.
     public Piece(boolean white)
