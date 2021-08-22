@@ -6,7 +6,7 @@ public class Square extends JButton implements ActionListener
 {
     private Piece piece;
     private int x, y;
-
+    private static Color squareBG;
     public Square(int x, int y, Piece piece)
     {
         this.setX(x);
@@ -33,13 +33,14 @@ public class Square extends JButton implements ActionListener
 
         if((x  % 2 != 0 && y % 2 == 0)||(x % 2 == 0 && y % 2 != 0))
         {
-            this.setBackground(Color.BLACK);
+            squareBG = Color.WHITE;
         }
         else
         {  
-             this.setBackground(Color.WHITE);
+            squareBG = Color.BLACK;
         }
-        
+
+        setBackground(squareBG);
         setOpaque(true);
     ;
     }
@@ -77,6 +78,11 @@ public class Square extends JButton implements ActionListener
     public Piece getPiece()
     {
         return this.piece;
+    }
+
+    public Color getColor()
+    {
+        return squareBG;
     }
 
     public void actionPerformed(ActionEvent e)
