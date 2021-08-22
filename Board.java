@@ -1,109 +1,73 @@
+<<<<<<< HEAD
 public class Board
-{
-    Square[][] chessBoard;
+=======
+import javax.swing.JFrame;
+import java.awt.*;
 
+public class Board extends JFrame
+>>>>>>> 381a12e3311570ad5e70072dee8c0a484ad511a7
+{
+    //Constructor instantiates Squares to the GUI, sets the pieces to proper squares, and to proper colors.
     public Board()
     {
-        chessBoard = new Square[8][8];
+        setTitle("Java Chess App");
+        Container c = getContentPane();
+        c.setLayout(new GridLayout(8, 8));
 
         for(int i = 1; i < 9; i++)
             for(int j = 1; j < 9; j++)
             {
+                Square chessBoard = null;
+
                 if((i ==  1 || i == 8) && (j == 1 || j == 8))
                 {
                     if(i == 1)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Rook(true)); 
+                    chessBoard = new Square(i, j, new Rook(true)); 
                     else
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Rook(false));
+                    chessBoard = new Square(i, j, new Rook(false));
                 }
                 else if((i ==  1 || i == 8) && (j == 2 || j == 7))
                 {
                     if(i == 1)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Knight(true));
+                    chessBoard = new Square(i, j, new Knight(true));
                     else
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Knight(false));
+                    chessBoard = new Square(i, j, new Knight(false));
                 }
                 else if((i ==  1 || i == 8) && (j == 3 || j == 6))
                 {
                     if(i == 1)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Bishop(true));
+                    chessBoard = new Square(i, j, new Bishop(true));
                     else
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Bishop(false));
+                    chessBoard = new Square(i, j, new Bishop(false));
                 }
                 else if((i ==  1 || i == 8) && j == 4)
                 {
                     if(i == 1)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Queen(true));
+                    chessBoard = new Square(i, j, new Queen(true));
                     else
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Queen(false));
+                    chessBoard= new Square(i, j, new Queen(false));
                 }
                 else if((i ==  1 || i == 8) && j == 5)
                 {
                     if(i == 1)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new King(true));
+                    chessBoard = new Square(i, j, new King(true));
                     else
-                    chessBoard[i - 1][j-1] = new Square(i, j, new King(false));
+                    chessBoard = new Square(i, j, new King(false));
                 }
                 else if(i == 2 || i == 7)
                 {
                     if(i == 2)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Pawn(true));
+                    chessBoard = new Square(i, j, new Pawn(true));
                     if(i == 7)
-                    chessBoard[i - 1][j-1] = new Square(i, j, new Pawn(false));
+                    chessBoard = new Square(i, j, new Pawn(false));
                 }
                 else
-                chessBoard[i - 1][j-1] = new Square(i, j, null);
-            }
-    }
+                chessBoard = new Square(i, j, null);
 
-    public void showBlackView()
-    {
-        for(int i = 0; i < 8; i++)
-            for(int j = 7; j >= 0; j--)
-            {
-                System.out.print(convertToLetter(chessBoard[j][i].getX(j)));
-                System.out.print(chessBoard[j][i].getY(i));
-                if(j == 0)
-                System.out.println();
+                c.add(chessBoard);
             }
-    }
-
-
-   public void showWhiteView()
-   {
-        for(int i = 7; i >= 0; i--)
-            for(int j = 0; j < 8; j++)
-            {
-            System.out.print(convertToLetter(chessBoard[j][i].getX(j)));
-            System.out.print(chessBoard[j][i].getY(i));
-            if(j == 7)
-            System.out.println();
-            }
-    }
-    
-    private String convertToLetter(int x)
-    {
-        int input = x;
-        switch(input)
-        {
-            case 1:
-            return "A";
-            case 2:
-            return "B";
-            case 3:
-            return "C";
-            case 4:
-            return "D";
-            case 5:
-            return "E";
-            case 6:
-            return "F";
-            case 7:
-            return "G";
-            case 8:
-            return "H";
-            default:
-            return "Error";
-        }
+        setSize(new Dimension(800, 800));
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }

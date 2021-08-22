@@ -4,4 +4,16 @@ public class Queen extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "Q";
+    }
+
+    public void movePiece(Square a)
+    {
+        System.out.println(a.showX());
+        System.out.println(a.showY());
+    }
 }

@@ -4,4 +4,16 @@ public class Rook extends Piece
     {
         super(white);
     }
+    
+    @Override
+    public String showPiece()
+    {
+        return "R";
+    }
+
+    public void movePiece(Square a)
+    {
+        System.out.println(a.showX());
+        System.out.println(a.showY());
+    }
 }

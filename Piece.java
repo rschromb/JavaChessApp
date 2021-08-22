@@ -2,15 +2,28 @@ public abstract class Piece
 {
     private boolean taken = false;
     private boolean white = false;
-    //location - for later
 
+    //Abstract methods for pieces to override
+    abstract String showPiece();
+    abstract void movePiece(Square a);
+
+    //Constructor includes boolean so pieces can be declared to the correct color upon initialization.
     public Piece(boolean white)
     {
         if(white == true)
         setWhite(this.white);
     }
 
-    public boolean checkWhite(boolean white)
+    //Returns String to show color of Piece.
+    public String showColor(boolean white)
+    {
+        if(white == true)
+        return "W";
+        else
+        return "B";
+    }
+
+    public boolean checkWhite()
     {
         return this.white;
     }
