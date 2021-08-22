@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public class Pawn extends Piece
 {
     public Pawn (boolean white)
@@ -15,5 +17,7 @@ public class Pawn extends Piece
     {
         System.out.println(a.showX());
         System.out.println(a.showY());
+
+        Board.getSquare(a.showX() - 1, a.showY() - 1).setBackground(Color.RED);
     }
 }
