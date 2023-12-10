@@ -15,5 +15,6 @@ public class King extends Piece
     {
         System.out.println(a.showX());
         System.out.println(a.showY());
+
     }
 }

@@ -68,6 +68,7 @@ public class Board extends JFrame
 
     public static Square getSquare(int x, int y)
     {
-        return chessBoard[x][y];
+        return chessBoard[x - 1][y-1];
     }
 }
+
