@@ -1,21 +1,18 @@
-import java.awt.Color;
 
-public class Pawn extends Piece
-{
-    public Pawn (boolean white)
+public class Pawn extends Piece {
+    public Pawn (ColorType color)
     {
-        super(white);
+        super(color, PieceType.PAWN);
     }
     
     @Override
     public String showPiece()
     {
-        return "B";
+        return "Pawn";
     }
 
-    public void movePiece(Square a)
-    {
+    public void movePiece(Square a) {
         System.out.println(a.showX());
         System.out.println(a.showY());
-    }
-}
+    }//end movePiece
+}//end Pawn

@@ -1,19 +1,17 @@
-public class Knight extends Piece
-{
-    public Knight (boolean white)
+public class Knight extends Piece {
+    public Knight (ColorType color)
     {
-        super(white);
+        super(color, PieceType.KNIGHT);
     }
     
     @Override
     public String showPiece()
     {
-        return "H";
+        return "Knight";
     }
 
-    public void movePiece(Square a)
-    {
+    public void movePiece(Square a) {
         System.out.println(a.showX());
         System.out.println(a.showY());
-    }
-}
+    }//end movePiece
+}//end Knight

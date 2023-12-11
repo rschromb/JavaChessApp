@@ -1,19 +1,17 @@
-public class Bishop extends Piece
-{
-    public Bishop (boolean white)
+public class Bishop extends Piece {
+    public Bishop (ColorType color)
     {
-        super(white);
+        super(color, PieceType.BISHOP);
     }
     
     @Override
     public String showPiece()
     {
-        return "B";
+        return "Bishop";
     }
 
-    public void movePiece(Square a)
-    {
+    public void movePiece(Square a) {
         System.out.println(a.showX());
         System.out.println(a.showY());
-    }
-}
+    }//end movePiece
+}//end Bishop

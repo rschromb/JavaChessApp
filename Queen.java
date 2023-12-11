@@ -1,19 +1,17 @@
-public class Queen extends Piece
-{
-    public Queen (boolean white)
+public class Queen extends Piece {
+    public Queen (ColorType color)
     {
-        super(white);
+        super(color, PieceType.QUEEN);
     }
     
     @Override
     public String showPiece()
     {
-        return "Q";
+        return "Queen";
     }
 
-    public void movePiece(Square a)
-    {
+    public void movePiece(Square a) {
         System.out.println(a.showX());
         System.out.println(a.showY());
-    }
-}
+    }//end movePiece
+}//end Queen
