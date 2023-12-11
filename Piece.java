@@ -1,46 +1,41 @@
-public abstract class Piece 
-{
-    private boolean taken = false;
-    private boolean white = false;
+// Piece.java
+public abstract class Piece {
+    private final ColorType color;
+    private Square square;
+    private final PieceType type;
 
-    //Abstract methods for pieces to override
-    abstract String showPiece();
-    abstract void movePiece(Square a);
+    // Constructor
+    public Piece(ColorType color, PieceType type) {
+        this.color = color;
+        this.type = type;
+    } // end constructor
 
-    //Constructor includes boolean so pieces can be declared to the correct color upon initialization.
-    public Piece(boolean white)
-    {
-        if(white == true)
-        setWhite(this.white);
-    }
+    // Abstract method to show the piece name
+    public abstract String showPiece(); // end showPiece
 
-    //Returns String to show color of Piece.
-    public String showColor(boolean white)
-    {
-        if(white == true)
-        return "W";
-        else
-        return "B";
-    }
+    // Move the piece to the specified destination square
+    public void movePiece(Square destination) {
+        destination.setPiece(this);
+        System.out.println("Moved " + showPiece() + " to " + destination.showX() + ", " + destination.showY());
+    } // end movePiece
 
-    public boolean checkWhite()
-    {
-        return this.white;
-    }
+    // Get the color of the piece
+    public ColorType getColor() {
+        return color;
+    } // end getColor
 
-    public boolean checkDead(boolean taken)
-    {
-        return this.taken;
-    }
+    // Get the type of the piece
+    public PieceType getType() {
+        return type;
+    } // end getType
 
-    public void setWhite(boolean white)
-    {
-        this.white = true;
-    }
+    // Enum for piece types
+    public enum PieceType {
+        PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING
+    } // end PieceType
 
-    public void setDead(boolean taken)
-    {
-        this.taken = true;
-    }
-
+    // Enum for color types
+    public enum ColorType {
+        PLAYER1, PLAYER2
+    } // end ColorType
 }

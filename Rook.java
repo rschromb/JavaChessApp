@@ -1,19 +1,17 @@
-public class Rook extends Piece
-{
-    public Rook (boolean white)
+public class Rook extends Piece {
+    public Rook (ColorType color)
     {
-        super(white);
+        super(color, PieceType.ROOK);
     }
     
     @Override
     public String showPiece()
     {
-        return "R";
+        return "Rook";
     }
 
-    public void movePiece(Square a)
-    {
+    public void movePiece(Square a) {
         System.out.println(a.showX());
         System.out.println(a.showY());
-    }
-}
+    }//end movePiece
+}//end Rook
